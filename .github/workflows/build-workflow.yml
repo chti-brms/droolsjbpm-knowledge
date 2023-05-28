@@ -1,0 +1,50 @@
+name: BuildDeploy-workflow
+run-name: Release run ${{ github.run_number }}  view
+on:
+  push:
+    branches: [ develop ]
+    pull_request:
+
+  schedule:
+    - cron: "15 3 * * *"
+
+jobs:
+
+  release:
+    name: BuildDeploy
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-package: 'jdk'
+          java-version: '11'
+          check-latest: true
+
+          cache: 'maven'
+      - name: Cache the Maven packages to speed up build
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.5
+        with:
+          maven-version: 3.8.1
+      - name: Build Java
+        env:
+          SONATYPE_USERNAME: ${{ secrets.YOUR_SONATYPE_USER }}
+          SONATYPE_PASSWORD: ${{ secrets.OUR_SONATYPE_PW }}
+        run: |
+          mvn -e -U -B -s settings.xml   clean compile install ;
+
+      - name: Deploy Maven Central
+        env:
+          SONATYPE_USERNAME: ${{ secrets.YOUR_SONATYPE_USER }}
+          SONATYPE_PASSWORD: ${{ secrets.OUR_SONATYPE_PW }}
+        run: |
+          mvn -e -U -B -s settings.xml -DskipTests  deploy ;

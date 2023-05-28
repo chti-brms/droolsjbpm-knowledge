@@ -59,7 +59,7 @@ def remoteDebugMarker = "REMOTE_DEBUG_MARKER";
 
 def BPMSpringBootStarterDepends = """
     <dependency>
-        <groupId>org.kie</groupId>
+       <groupId>org.chtijbug.kie</groupId>
         <artifactId>kie-server-spring-boot-starter</artifactId>
         <version>\${version.org.kie}</version>
     </dependency>
@@ -67,7 +67,7 @@ def BPMSpringBootStarterDepends = """
 
 def BRMSpringBootStarterDepends = """
     <dependency>
-        <groupId>org.kie</groupId>
+       <groupId>org.chtijbug.kie</groupId>
         <artifactId>kie-server-spring-boot-starter-drools</artifactId>
         <version>\${version.org.kie}</version>
     </dependency>
@@ -75,7 +75,7 @@ def BRMSpringBootStarterDepends = """
 
 def PlannerSpringBootStarterDepends = """
     <dependency>
-        <groupId>org.kie</groupId>
+       <groupId>org.chtijbug.kie</groupId>
         <artifactId>kie-server-spring-boot-starter-optaplanner</artifactId>
         <version>\${version.org.kie}</version>
     </dependency>

@@ -63,7 +63,7 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.kie</groupId>
+       <groupId>org.chtijbug.kie</groupId>
         <artifactId>kie-maven-plugin</artifactId>
         <version>${drools-version}</version>
         <extensions>true</extensions>
@@ -83,7 +83,7 @@
               <pluginExecutions>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.kie</groupId>
+                   <groupId>org.chtijbug.kie</groupId>
                     <artifactId>kie-maven-plugin</artifactId>
                     <versionRange>[6.0.0,)</versionRange>
                     <goals>

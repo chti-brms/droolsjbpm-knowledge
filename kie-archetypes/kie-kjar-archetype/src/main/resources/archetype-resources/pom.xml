@@ -19,7 +19,7 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.kie</groupId>
+       <groupId>org.chtijbug.kie</groupId>
         <artifactId>kie-maven-plugin</artifactId>
         <version>\${version.org.kie}</version>
         <extensions>true</extensions>

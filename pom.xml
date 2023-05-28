@@ -4,9 +4,9 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.kie</groupId>
+   <groupId>org.chtijbug.kie</groupId>
     <artifactId>kie-parent</artifactId>
-    <version>7.73.0.Final</version>
+    <version>7.74.0-SNAPSHOT</version>
     <!-- relativePath causes out-of-date problems on hudson secondary nodes -->
     <!--<relativePath>../droolsjbpm-build-bootstrap/pom.xml</relativePath>-->
   </parent>
@@ -55,14 +55,14 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.kie</groupId>
+       <groupId>org.chtijbug.kie</groupId>
         <artifactId>kie-bom</artifactId>
         <version>${version.org.kie}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.kie.soup</groupId>
+       <groupId>org.chtijbug.kie.soup</groupId>
         <artifactId>kie-soup-bom</artifactId>
         <version>${version.org.kie}</version>
         <type>pom</type>
