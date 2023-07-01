@@ -19,7 +19,7 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.drools</groupId>
+        <groupId>org.chtijbug.drools</groupId>
         <artifactId>drools-bom</artifactId>
         <type>pom</type>
         <version>${drools-version}</version>
@@ -31,7 +31,7 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.drools</groupId>
+      <groupId>org.chtijbug.drools</groupId>
       <artifactId>drools-engine-classic</artifactId>
     </dependency>
 
